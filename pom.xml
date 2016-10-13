@@ -109,60 +109,58 @@
         </pluginRepository>
     </pluginRepositories>
 
-    <dependencyManagement>
-        <dependencies>
-            <dependency>
-                <groupId>org.apache.tomcat</groupId>
-                <artifactId>tomcat-catalina</artifactId>
-                <version>${tomcat.version}</version>
-                <scope>provided</scope>
-            </dependency>
-            <dependency>
-                <groupId>commons-io</groupId>
-                <artifactId>commons-io</artifactId>
-                <version>${commons.io.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>org.apache.commons</groupId>
-                <artifactId>commons-lang3</artifactId>
-                <version>${commons.lang3.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>org.wso2.appserver</groupId>
-                <artifactId>appserver-utils</artifactId>
-                <version>${wso2.appserver.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>org.apache.tomcat</groupId>
-                <artifactId>tomcat-juli</artifactId>
-                <version>${tomcat.version}</version>
-                <scope>provided</scope>
-            </dependency>
-            <dependency>
-                <groupId>org.jacoco</groupId>
-                <artifactId>org.jacoco.agent</artifactId>
-                <classifier>runtime</classifier>
-                <version>${jacoco.version}</version>
-                <scope>test</scope>
-            </dependency>
-            <dependency>
-                <groupId>org.testng</groupId>
-                <artifactId>testng</artifactId>
-                <version>${testng.version}</version>
-                <scope>test</scope>
-            </dependency>
-            <dependency>
-                <groupId>org.wso2.shade.commons-logging</groupId>
-                <artifactId>commons-logging-shaded</artifactId>
-                <version>${commons-logging-shaded-version}</version>
-            </dependency>
-            <dependency>
-                <groupId>org.wso2.shade.log4j</groupId>
-                <artifactId>log4j-shaded</artifactId>
-                <version>${log4j.shade.version}</version>
-            </dependency>
-        </dependencies>
-    </dependencyManagement>
+    <dependencies>
+        <dependency>
+            <groupId>org.apache.tomcat</groupId>
+            <artifactId>tomcat-catalina</artifactId>
+            <version>${tomcat.version}</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>commons-io</groupId>
+            <artifactId>commons-io</artifactId>
+            <version>${commons.io.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-lang3</artifactId>
+            <version>${commons.lang3.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.wso2.appserver</groupId>
+            <artifactId>appserver-utils</artifactId>
+            <version>${appserver.utility.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.tomcat</groupId>
+            <artifactId>tomcat-juli</artifactId>
+            <version>${tomcat.version}</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.jacoco</groupId>
+            <artifactId>org.jacoco.agent</artifactId>
+            <classifier>runtime</classifier>
+            <version>${jacoco.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.testng</groupId>
+            <artifactId>testng</artifactId>
+            <version>${testng.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.wso2.shade.commons-logging</groupId>
+            <artifactId>commons-logging-shaded</artifactId>
+            <version>${commons-logging-shaded-version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.wso2.shade.log4j</groupId>
+            <artifactId>log4j-shaded</artifactId>
+            <version>${log4j.shade.version}</version>
+        </dependency>
+    </dependencies>
 
     <build>
         <finalName>${artifactId}-${version}-tiny</finalName>
@@ -232,7 +230,7 @@
         <tomcat.version>8.0.36</tomcat.version>
         <commons.lang3.version>3.4</commons.lang3.version>
         <commons.io.version>2.4</commons.io.version>
-        <wso2.appserver.version>6.0.0-SNAPSHOT</wso2.appserver.version>
+        <appserver.utility.version>1.0.0-SNAPSHOT</appserver.utility.version>
         <jacoco.version>0.7.6.201602180812</jacoco.version>
         <testng.version>6.9.10</testng.version>
 
