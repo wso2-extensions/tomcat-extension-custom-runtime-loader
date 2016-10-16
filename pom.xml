@@ -21,10 +21,16 @@
 
     <modelVersion>4.0.0</modelVersion>
     <groupId>org.wso2.carbon.tomcat.custom.runtime.extension</groupId>
+    <artifactId>tomcat-custom-runtime</artifactId>
     <version>1.0.0-SNAPSHOT</version>
-    <artifactId>tomcat-custom-runtime-loader</artifactId>
-    <name>Tomcat - Extension - Custom Runtime Loader</name>
+    <packaging>pom</packaging>
+    <name>Tomcat - Extension</name>
     <url>http://wso2.com</url>
+
+    <modules>
+        <module>modules</module>
+        <module>samples</module>
+    </modules>
 
     <scm>
         <url>https://github.com/wso2-extensions/tomcat-extension-custom-runtime-loader.git</url>
@@ -109,135 +115,71 @@
         </pluginRepository>
     </pluginRepositories>
 
-    <dependencies>
-        <dependency>
-            <groupId>org.apache.tomcat</groupId>
-            <artifactId>tomcat-catalina</artifactId>
-            <version>${tomcat.version}</version>
-            <scope>provided</scope>
-        </dependency>
-        <dependency>
-            <groupId>commons-io</groupId>
-            <artifactId>commons-io</artifactId>
-            <version>${commons.io.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>org.apache.commons</groupId>
-            <artifactId>commons-lang3</artifactId>
-            <version>${commons.lang3.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>org.wso2.appserver</groupId>
-            <artifactId>appserver-utils</artifactId>
-            <version>${appserver.utility.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>org.apache.tomcat</groupId>
-            <artifactId>tomcat-juli</artifactId>
-            <version>${tomcat.version}</version>
-            <scope>provided</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.jacoco</groupId>
-            <artifactId>org.jacoco.agent</artifactId>
-            <classifier>runtime</classifier>
-            <version>${jacoco.version}</version>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.testng</groupId>
-            <artifactId>testng</artifactId>
-            <version>${testng.version}</version>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.wso2.shade.commons-logging</groupId>
-            <artifactId>commons-logging-shaded</artifactId>
-            <version>${commons-logging-shaded-version}</version>
-        </dependency>
-        <dependency>
-            <groupId>org.wso2.shade.log4j</groupId>
-            <artifactId>log4j-shaded</artifactId>
-            <version>${log4j.shade.version}</version>
-        </dependency>
-    </dependencies>
-
-    <build>
-        <finalName>${artifactId}-${version}-tiny</finalName>
-        <plugins>
-            <plugin>
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.apache.tomcat</groupId>
+                <artifactId>tomcat-catalina</artifactId>
+                <version>${tomcat.version}</version>
+                <scope>provided</scope>
+            </dependency>
+            <dependency>
+                <groupId>commons-io</groupId>
+                <artifactId>commons-io</artifactId>
+                <version>${commons.io.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.commons</groupId>
+                <artifactId>commons-lang3</artifactId>
+                <version>${commons.lang3.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.wso2.appserver</groupId>
+                <artifactId>appserver-utils</artifactId>
+                <version>${appserver.utility.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.tomcat</groupId>
+                <artifactId>tomcat-juli</artifactId>
+                <version>${tomcat.version}</version>
+                <scope>provided</scope>
+            </dependency>
+            <dependency>
                 <groupId>org.jacoco</groupId>
-                <artifactId>jacoco-maven-plugin</artifactId>
-            </plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-surefire-plugin</artifactId>
-                <configuration>
-                    <suiteXmlFiles>
-                        <suiteXmlFile>src/test/resources/weapp-loader-test.xml</suiteXmlFile>
-                    </suiteXmlFiles>
-                    <systemProperties>
-                        <catalina.base>src/test/resources/mock-server-home</catalina.base>
-                        <catalina.home>src/test/resources/mock-server-home</catalina.home>
-                    </systemProperties>
-                </configuration>
-            </plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-compiler-plugin</artifactId>
-                <configuration>
-                    <encoding>UTF-8</encoding>
-                    <source>${wso2.appserver.maven.compiler.source}</source>
-                    <target>${wso2.appserver.maven.compiler.target}</target>
-                </configuration>
-            </plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-assembly-plugin</artifactId>
-                <version>2.6</version>
-                <configuration>
-                    <descriptorRefs>
-                        <descriptorRef>jar-with-dependencies</descriptorRef>
-                    </descriptorRefs>
-                    <finalName>${artifactId}-${version}-fat</finalName>
-                    <appendAssemblyId>false</appendAssemblyId>
-                </configuration>
-                <executions>
-                    <execution>
-                        <id>make-assembly</id>
-                        <phase>package</phase>
-                        <goals>
-                            <goal>single</goal>
-                        </goals>
-                    </execution>
-                </executions>
-            </plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-release-plugin</artifactId>
-                <configuration>
-                    <preparationGoals>clean install</preparationGoals>
-                </configuration>
-            </plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-deploy-plugin</artifactId>
-            </plugin>
-        </plugins>
-    </build>
+                <artifactId>org.jacoco.agent</artifactId>
+                <classifier>runtime</classifier>
+                <version>${jacoco.version}</version>
+                <scope>test</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.testng</groupId>
+                <artifactId>testng</artifactId>
+                <version>${testng.version}</version>
+                <scope>test</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.wso2.shade.commons-logging</groupId>
+                <artifactId>commons-logging-shaded</artifactId>
+                <version>${commons-logging-shaded-version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.wso2.shade.log4j</groupId>
+                <artifactId>log4j-shaded</artifactId>
+                <version>${log4j.shade.version}</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
 
     <properties>
         <tomcat.version>8.0.36</tomcat.version>
         <commons.lang3.version>3.4</commons.lang3.version>
         <commons.io.version>2.4</commons.io.version>
-        <appserver.utility.version>1.0.0-SNAPSHOT</appserver.utility.version>
+        <appserver.utility.version>1.0.0</appserver.utility.version>
         <jacoco.version>0.7.6.201602180812</jacoco.version>
         <testng.version>6.9.10</testng.version>
 
         <log4j.shade.version>1.2.17.wso2v1</log4j.shade.version>
         <commons-logging-shaded-version>1.2.0.wso2v1</commons-logging-shaded-version>
 
-        <wso2.appserver.maven.compiler.source>1.8</wso2.appserver.maven.compiler.source>
-        <wso2.appserver.maven.compiler.target>1.8</wso2.appserver.maven.compiler.target>
     </properties>
 </project>
