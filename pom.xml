@@ -174,7 +174,7 @@
         <tomcat.version>8.0.36</tomcat.version>
         <commons.lang3.version>3.4</commons.lang3.version>
         <commons.io.version>2.4</commons.io.version>
-        <appserver.utility.version>1.0.0</appserver.utility.version>
+        <appserver.utility.version>1.0.1</appserver.utility.version>
         <jacoco.version>0.7.6.201602180812</jacoco.version>
         <testng.version>6.9.10</testng.version>
 
