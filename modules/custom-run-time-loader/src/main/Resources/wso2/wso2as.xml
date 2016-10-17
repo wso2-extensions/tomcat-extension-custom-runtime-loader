@@ -38,48 +38,6 @@
     </ClassLoader>
 
     <!--
-        Defines the server level configurations required for SAML 2.0 based Web Browser Single-Sign-On (SSO)
-        and Single-Logout (SLO) Profiles.
-    -->
-    <SAML2SingleSignOn>
-        <!--
-            The URL identifying the SAML 2.0 Identity Provider in order to perform single-sign-on
-            and single-logout.
-        -->
-        <IdPURL>https://localhost:9443/samlsso</IdPURL>
-
-        <!-- The unique entity identifier of the SAML 2.0 Identity Provider. -->
-        <IdPEntityId>localhost</IdPEntityId>
-
-        <!-- The alias of the Identity Provider's Public certificate. -->
-        <IdPCertificateAlias>wso2carbon</IdPCertificateAlias>
-    </SAML2SingleSignOn>
-
-    <!--
-        Defines the server level configurations required for HTTP statistics monitoring of web applications using
-        WSO2 Data Analytics Server (DAS).
-    -->
-    <StatisticsPublisher>
-        <!-- The username credential required to log into WSO2 Data Analytics Server (DAS) -->
-        <Username>admin</Username>
-
-        <!-- The password required to log into WSO2 Data Analytics Server (DAS) -->
-        <Password>admin</Password>
-
-        <!-- The data agent configured in WSO2 Data Analytics Server (DAS) -->
-        <DataAgentType>Thrift</DataAgentType>
-
-        <!-- The secure Thrift SSL port in WSO2 Data Analytics Server (DAS) for publishing statistics. -->
-        <AuthenticationURL>ssl://127.0.0.1:7711</AuthenticationURL>
-
-        <!-- The URL of WSO2 Data Analytics Server (DAS), which will be used for publishing the statistics. -->
-        <PublisherURL>tcp://127.0.0.1:7611</PublisherURL>
-
-        <!-- The event stream defined in WSO2 Data Analytics Server (DAS) to receive the data published. -->
-        <StreamId>org.wso2.http.analytics.stream:1.0.0</StreamId>
-    </StatisticsPublisher>
-
-    <!--
         The child elements under this defines the Application Server SSL communication configurations.
         This includes the Application Server keystore and trust-store configurations.
      -->
