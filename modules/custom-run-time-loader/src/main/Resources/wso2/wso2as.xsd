@@ -36,39 +36,6 @@
                         </xs:sequence>
                     </xs:complexType>
                 </xs:element>
-                <xs:element name="SAML2SingleSignOn" minOccurs="0" maxOccurs="1">
-                    <xs:complexType>
-                        <xs:sequence>
-                            <xs:element name="IdPURL" type="xs:anyURI"/>
-                            <xs:element name="IdPEntityId" type="xs:string"/>
-                            <xs:element name="SignatureValidatorImplClass" type="xs:string" minOccurs="0"
-                                        maxOccurs="1"/>
-                            <xs:element name="IdPCertificateAlias" type="xs:string" minOccurs="0" maxOccurs="1"/>
-                            <xs:element name="AssertionConsumerServiceBase" type="xs:anyURI" minOccurs="0" maxOccurs="1"/>
-                            <xs:element name="Property" minOccurs="0" maxOccurs="unbounded">
-                                <xs:complexType>
-                                    <xs:simpleContent>
-                                        <xs:extension base="xs:string">
-                                            <xs:attribute name="Key" type="xs:string" use="required"/>
-                                        </xs:extension>
-                                    </xs:simpleContent>
-                                </xs:complexType>
-                            </xs:element>
-                        </xs:sequence>
-                    </xs:complexType>
-                </xs:element>
-                <xs:element name="StatisticsPublisher" minOccurs="0" maxOccurs="1">
-                    <xs:complexType>
-                        <xs:sequence>
-                            <xs:element name="Username" type="xs:string"/>
-                            <xs:element name="Password" type="xs:string"/>
-                            <xs:element name="DataAgentType" type="xs:string" minOccurs="0" maxOccurs="1"/>
-                            <xs:element name="AuthenticationURL" type="xs:anyURI"/>
-                            <xs:element name="PublisherURL" type="xs:anyURI"/>
-                            <xs:element name="StreamId" type="xs:string"/>
-                        </xs:sequence>
-                    </xs:complexType>
-                </xs:element>
                 <xs:element name="Security" minOccurs="0" maxOccurs="1">
                     <xs:complexType>
                         <xs:sequence>
