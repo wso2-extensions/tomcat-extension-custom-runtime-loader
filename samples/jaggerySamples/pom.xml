@@ -21,14 +21,14 @@
     <parent>
         <groupId>org.wso2.carbon.tomcat.custom.runtime.extension</groupId>
         <artifactId>samples</artifactId>
-        <version>1.0.0</version>
+        <version>1.0.1-SNAPSHOT</version>
         <relativePath>../pom.xml</relativePath>
     </parent>
 
     <groupId>org.wso2.carbon.tomcat.custom.runtime.extension</groupId>
     <modelVersion>4.0.0</modelVersion>
     <artifactId>coffeeshop</artifactId>
-    <version>1.0.0</version>
+    <version>1.0.1-SNAPSHOT</version>
     <name>WSO2 Application Server - Sample - Coffeeshop Jaggery Sample</name>
     <description>Jagerry Sample</description>
     <url>http://wso2.com</url>
