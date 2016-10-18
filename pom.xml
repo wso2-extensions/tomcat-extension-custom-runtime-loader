@@ -22,7 +22,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>org.wso2.carbon.tomcat.custom.runtime.extension</groupId>
     <artifactId>tomcat-custom-runtime</artifactId>
-    <version>1.0.0-SNAPSHOT</version>
+    <version>1.0.0</version>
     <packaging>pom</packaging>
     <name>Tomcat - Extension</name>
     <url>http://wso2.com</url>
@@ -36,7 +36,7 @@
         <url>https://github.com/wso2-extensions/tomcat-extension-custom-runtime-loader.git</url>
         <developerConnection>scm:git:https://github.com/wso2-extensions/tomcat-extension-custom-runtime-loader.git</developerConnection>
         <connection>scm:git:https://github.com/wso2-extensions/tomcat-extension-custom-runtime-loader.git</connection>
-        <tag>HEAD</tag>
+        <tag>v1.0.0</tag>
     </scm>
 
 
